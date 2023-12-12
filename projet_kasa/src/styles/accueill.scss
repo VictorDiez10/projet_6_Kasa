@@ -1,0 +1,19 @@
+.container_logements{
+    background-color: #F6F6F6;
+    margin-top: 2%;
+    border-radius: 25px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    align-items: center;
+    justify-items: center;
+}
+
+.card_click{
+    height: 340px;
+    width: 340px;
+    position: relative;
+    box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    
+}

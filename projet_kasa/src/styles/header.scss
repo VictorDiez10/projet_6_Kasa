@@ -1,0 +1,32 @@
+body{
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.logo_kasa{
+    margin-top: 32px;
+}
+
+.sous_header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_links{
+    display: flex;
+    margin-top: 32px;
+    align-items: center;
+    width: 15%;
+    gap: 22%;
+    font-weight: 500;
+    .active{
+        text-decoration: underline #FF6060;
+    }
+    a{
+        text-decoration-line: none;
+        color: #FF6060;
+        &:hover{
+            text-decoration: underline #FF6060;
+        }
+    }
+}
