@@ -1,4 +1,9 @@
-body{
+// body {
+//     // margin-left: 4%;
+//     // margin-right: 4%;
+// }
+
+header{
     margin-left: 4%;
     margin-right: 4%;
 }
@@ -16,6 +21,7 @@ body{
     display: flex;
     margin-top: 32px;
     align-items: center;
+    justify-content: flex-end;
     width: 15%;
     gap: 22%;
     font-weight: 500;
@@ -25,6 +31,7 @@ body{
     a{
         text-decoration-line: none;
         color: #FF6060;
+        white-space: nowrap;
         &:hover{
             text-decoration: underline #FF6060;
         }

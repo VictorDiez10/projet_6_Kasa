@@ -5,13 +5,10 @@ export default function Card({cover, title}) {
     return (
             <>
             
-            <div className="card_logements">
-            <div className="card_content">
+            <div className="card_overlay"></div>
                 <img src={cover} alt={title} className="card_img"/>
-                </div>
-                <div className="card_title">{title}</div>
-                
-            </div>
+            
+            <div className="card_title">{title}</div>
             </>
     )
 }

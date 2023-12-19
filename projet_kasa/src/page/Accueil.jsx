@@ -21,6 +21,7 @@ function Accueil() {
         <>
         <Header/>
         <Banner img={Falaise} title="Chez vous, partout et ailleurs"/>
+        <main>
         <div className="container_logements">
             {logements.map(logement => {
                 return(
@@ -31,6 +32,7 @@ function Accueil() {
             })}
             
         </div>
+        </main>
         <Footer/>
         </>
     )

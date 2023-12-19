@@ -4,6 +4,7 @@ import Accueil from '../page/Accueil.jsx'
 import Propos from '../page/A_propos.jsx'
 import Error from '../page/Error.jsx'
 import Location from "../page/Location.jsx"
+import "../styles/responsive.scss"
 
 function App() {
   

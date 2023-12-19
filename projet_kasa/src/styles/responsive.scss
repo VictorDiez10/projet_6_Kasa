@@ -1,0 +1,47 @@
+
+
+@media (max-width: 1360px) {
+    .container_logements{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .container_logements{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .banner{
+        h1{
+            left: 4%;
+        }
+    }
+
+    .all_collapse{
+        width: 97%;
+    }
+}
+
+@media (max-width: 870px) {
+    .card_click{
+        height: 400px;
+    }
+}
+
+@media (max-width: 740px) {
+    .card_click{
+        height: 350px;
+    }
+    .banner{
+        height: 200px;
+        h1{
+            top: 26%;
+        }
+    }
+}
+
+@media (max-width: 580px) {
+    .card_click{
+        height: 300px;
+    }
+}
