@@ -25,7 +25,7 @@ export default function Location() {
           <>
           <Header/>
           <div className="container-styles">
-          {logement && (
+          {logement.pictures && (
           <ImageSlider slides={logement.pictures}/>
             )}
           </div>
