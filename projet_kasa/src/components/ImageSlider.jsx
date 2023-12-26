@@ -17,6 +17,7 @@ function ImageSlider ({slides}) {
     }
     return (
         <div className="slider-styles">
+            <div className="counter">{currentIndex + 1}/{slides.length}</div>
             <img src={left} alt="left" className="left" onClick={goToPrevious}/>
             <img src={right} alt="right" className="right" onClick={goToNext}/>
             <div className="slide-styles" style={{backgroundImage: `url(${slides[currentIndex]})`}}></div>
