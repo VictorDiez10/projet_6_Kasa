@@ -15,6 +15,14 @@ function ImageSlider ({slides}) {
         const newIndex = isLastSlide ? 0 : currentIndex + 1
         setCurrentIndex(newIndex)
     }
+
+    if(slides.length === 1) {
+        return (
+            <div className="slider-styles">
+                <div className="slide-styles" style={{backgroundImage: `url(${slides[currentIndex]})`}}></div>    
+            </div>
+        )
+    } else {
     return (
         <div className="slider-styles">
             <div className="counter">{currentIndex + 1}/{slides.length}</div>
@@ -22,7 +30,7 @@ function ImageSlider ({slides}) {
             <img src={right} alt="right" className="right" onClick={goToNext}/>
             <div className="slide-styles" style={{backgroundImage: `url(${slides[currentIndex]})`}}></div>
         </div>
-    )
+    )}
 }
 
 export default ImageSlider;

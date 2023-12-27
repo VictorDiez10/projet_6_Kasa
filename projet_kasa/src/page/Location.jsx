@@ -7,6 +7,7 @@ import "../styles/location.scss"
 import FullStars from "../assets/star_rose.png"
 import EmptyStars from "../assets/star_gray.png"
 import Collapse from '../components/Collapse';
+import Footer from "../components/Footer"
 
 export default function Location() {
 
@@ -76,7 +77,7 @@ export default function Location() {
           </div>
           <div className="description-equipements">
             <Collapse name="Description" para={logement.description}/>
-            <Collapse name="Equipements" para={logement.description && logement.equipments.map(equipment => {
+            <Collapse name="Équipements" para={logement.description && logement.equipments.map(equipment => {
               return (
                 <ul>
                   <li key={equipment}>{equipment}</li>
@@ -84,6 +85,7 @@ export default function Location() {
               )
             })}/>
           </div>
+          <Footer/>
           </>
       )
   
