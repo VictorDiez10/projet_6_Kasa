@@ -8,6 +8,8 @@ import FullStars from "../assets/star_rose.png"
 import EmptyStars from "../assets/star_gray.png"
 import Collapse from '../components/Collapse';
 import Footer from "../components/Footer"
+import Rating from "../components/Rating"
+import Error from "../page/Error"
 
 export default function Location() {
 
@@ -18,52 +20,56 @@ export default function Location() {
         fetch("/logements.json")
         .then(response => response.json())
         .then((data) => {
-          let log = data.find(l => l.id == id);
+          let log = data.find(l => l.id === id);
           console.log(log)
           setLogement(log)
         })
         .catch((error) => console.error(error))
     },[id]);
 
-    const fullStars = Array(5).fill(<img src={FullStars} alt="full-star"/>)
-    const emptyStars = Array(5).fill(<img src={EmptyStars} alt="empty-star"/>)
+    if(logement === undefined) {
+      return (<><Error /></>)
+    }
+      else {
 
-      return(
+      return (
           <>
           <Header/>
           <div className="container">
           <div className="container-styles">
-          {logement.pictures && (
+          {logement && logement.pictures && (
           <ImageSlider slides={logement.pictures}/>
             )}
           </div>
           </div>
           <div className="title-host-photo">
             <div className="title">
-              <h2>{logement.title}</h2>
+              <h2>{logement && logement.title}</h2>
             </div>
             <div className="host-name-photo">
               <div className="host-name">
-                <p>{logement.host && logement.host.name}</p>
+                <p>{logement && logement.host && logement.host.name}</p>
               </div>
               <div className="host-photo">
-                <img src={logement.host && logement.host.picture} alt="profile-picture" />
+                <img src={logement && logement.host && logement.host.picture} alt="profile-picture" />
               </div>
             </div>
           </div>
           <div className="location">
-            <p>{logement.location}</p>
+            <p>{logement && logement.location}</p>
           </div>
           <div className="tags-rating">
             <div className="tags">
-              {logement.tags && logement.tags.map(tag => {
+              {logement && logement.tags && logement.tags.map(tag => {
                 return (
                   <div className="tag" key={tag}>{tag}</div>
                 )
               })}
             </div>
             <div className="rating">
-              {fullStars.slice(5 - logement.rating).map(fullStar => {
+
+              <Rating rate={logement && logement.rating} />
+              {/* {fullStars.slice(5 - logement.rating).map(fullStar => {
                 return (
                   <div key={Math.random()}>{fullStar}</div>
                 )
@@ -72,21 +78,22 @@ export default function Location() {
                 return (
                   <div key={Math.random()}>{emptyStar}</div>
                 )
-                })}
+                })} */}
             </div>
           </div>
           <div className="description-equipements">
-            <Collapse name="Description" para={logement.description}/>
-            <Collapse name="Équipements" para={logement.description && logement.equipments.map(equipment => {
+            <Collapse name="Description" para={logement && logement.description}/>
+            <Collapse name="Équipements" para={logement && logement.description && logement.equipments.map(equipment => {
               return (
-                <ul>
-                  <li key={equipment}>{equipment}</li>
+                <ul key={equipment}>
+                  <li >{equipment}</li>
                 </ul>
               )
             })}/>
           </div>
           <Footer/>
           </>
-      )
+      ) }
+    } 
+
   
-}
