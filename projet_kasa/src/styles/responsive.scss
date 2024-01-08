@@ -24,6 +24,40 @@
     .nav_links a {
         text-transform: uppercase;
     }
+
+    .counter {
+        display: none;
+    }
+
+    main {
+        display: block;
+    }
+
+    .location {
+        margin-top: 3%;
+    }
+
+    .tags {
+        margin-top: 4%;
+    }
+
+    .host-rating {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+
+    .rating {
+        margin-top: 0;
+        align-items: center;
+        img {
+            margin-left: 0;
+        }
+    }
+
+    .description-equipements {
+        display: block;
+    }
 }
 
 @media (max-width: 870px) {

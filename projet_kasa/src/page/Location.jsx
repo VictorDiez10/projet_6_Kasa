@@ -29,8 +29,7 @@ export default function Location() {
 
     if(logement === undefined) {
       return (<><Error /></>)
-    }
-      else {
+    }else {
 
       return (
           <>
@@ -42,10 +41,25 @@ export default function Location() {
             )}
           </div>
           </div>
-          <div className="title-host-photo">
+          <main>
+          <div className="title-location-tags">
             <div className="title">
               <h2>{logement && logement.title}</h2>
+            
+            
+          </div>
+          <div className="location">
+            <p>{logement && logement.location}</p>
+          </div>
+          <div className="tags">
+              {logement && logement.tags && logement.tags.map(tag => {
+                return (
+                  <div className="tag" key={tag}>{tag}</div>
+                )
+              })}
             </div>
+            </div>
+          <div className="host-rating">
             <div className="host-name-photo">
               <div className="host-name">
                 <p>{logement && logement.host && logement.host.name}</p>
@@ -54,33 +68,11 @@ export default function Location() {
                 <img src={logement && logement.host && logement.host.picture} alt="profile-picture" />
               </div>
             </div>
-          </div>
-          <div className="location">
-            <p>{logement && logement.location}</p>
-          </div>
-          <div className="tags-rating">
-            <div className="tags">
-              {logement && logement.tags && logement.tags.map(tag => {
-                return (
-                  <div className="tag" key={tag}>{tag}</div>
-                )
-              })}
-            </div>
             <div className="rating">
-
               <Rating rate={logement && logement.rating} />
-              {/* {fullStars.slice(5 - logement.rating).map(fullStar => {
-                return (
-                  <div key={Math.random()}>{fullStar}</div>
-                )
-                })}
-              {emptyStars.slice(logement.rating).map(emptyStar => {
-                return (
-                  <div key={Math.random()}>{emptyStar}</div>
-                )
-                })} */}
             </div>
           </div>
+          </main>
           <div className="description-equipements">
             <Collapse name="Description" para={logement && logement.description}/>
             <Collapse name="Équipements" para={logement && logement.description && logement.equipments.map(equipment => {
