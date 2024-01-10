@@ -1,11 +1,6 @@
 .error{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
-    justify-content: center;
     color: #FF6060;
-    height: 562px;
+    height: 468px;
 }
 
 .error_404{
@@ -23,6 +18,7 @@
     margin-bottom: 95px;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 .error_accueil{
