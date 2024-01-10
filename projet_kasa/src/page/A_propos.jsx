@@ -9,11 +9,11 @@ function Propos() {
         <>
         <Header/>
         <Banner img={Foret}/>
-        <div className="container_collapse">
-            {data.map((item)=> (
-                <Collapse  key={item.name} name={item.name} para={item.reponse} />
-            ))}
-        </div>
+            <div className="container_collapse">
+                {data.map((item)=> (
+                    <Collapse  key={item.name} name={item.name} para={item.reponse} />
+                ))}
+            </div>
         <Footer/>
         </>
     )

@@ -14,7 +14,16 @@ export default function Collapse({name, para}) {
                             <img src={collapse} alt={isOpen ? "collapse" : "uncollapse"} className={isOpen ? "collapse" : "uncollapse"} onClick={() => setIsOpen(!isOpen)} />
                         </div>
                     </div>
-                <div className={isOpen ? "content show" : "content"}>{para}</div>
+                    <div className={isOpen ? "content show" : "content"}>
+                        {typeof para === "string" && (
+                            <p>{para}</p>
+                        )}
+                        {Array.isArray(para) && (
+                            para.map((item, index) => (
+                                <p key={item + index}>{item}</p>
+                            ))
+                        )}
+                    </div>
                 </div>
             </div>
             </>

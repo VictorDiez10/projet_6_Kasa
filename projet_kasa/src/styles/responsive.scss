@@ -51,12 +51,21 @@
         margin-top: 0;
         align-items: center;
         img {
-            margin-left: 0;
+            margin-left: 10px;
         }
     }
 
     .description-equipements {
         display: block;
+    }
+
+    .container_logements {
+        background-color: #FFFFFF;
+        width: unset;
+    }
+
+    .card_click{
+        width: 102%;
     }
 }
 

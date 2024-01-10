@@ -21,18 +21,17 @@ function Accueil() {
         <>
         <Header/>
         <Banner img={Falaise} title="Chez vous, partout et ailleurs"/>
-        <main>
-        <div className="container_logements">
-            {logements.map(logement => {
-                return(
-                    <Link to={`logement/${logement.id}`} key={logement.id} className="card_click">
-                        <Card cover={logement.cover} title={logement.title}/>
-                    </Link>
-                )
-            })}
-            
-        </div>
-        </main>
+            <main>
+                <div className="container_logements">
+                    {logements.map(logement => {
+                        return(
+                            <Link to={`logement/${logement.id}`} key={logement.id} className="card_click">
+                                <Card cover={logement.cover} title={logement.title}/>
+                            </Link>
+                        )
+                    })}
+                </div>
+            </main>
         <Footer/>
         </>
     )

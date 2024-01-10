@@ -3,7 +3,8 @@ import Footer_Kasa from "../assets/logo_kasa_footer.png"
 import "../styles/footer.scss"
 
 export default function Footer() {
-return (<footer>
+return (
+        <footer>
                 <div className="footer_kasa">
                         <div className="footer_all_right">
                                 <img src={Footer_Kasa} alt="Logo KASA" className="footer_img_kasa"/>
@@ -11,5 +12,5 @@ return (<footer>
                         </div>
                 </div>
         </footer>
-)
+        )
 }
